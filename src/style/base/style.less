@@ -788,6 +788,51 @@ a {
     }
 }
 
+.article-detail{
+  padding:0 0 50px 25%;
+  .top{
+    padding: 1rem 0;
+  }
+  .return-btn{
+    margin-bottom: 1.6rem;
+    height: 3rem;
+    .return-btn-fixed{
+      position: fixed;
+      width: 80%;
+      height:3rem;
+      top:52px;
+    }
+    a{
+      display: inline-block;
+      border: 1px solid #333;
+      border-radius: 1rem;
+      padding: 0.3rem 0.8rem;
+      font-size: 1.3rem;
+      background: white;
+    }
+  }
+  .title{
+    text-align: center;
+    font-size: 2.2rem;
+    line-height: 2.4rem;
+    width: 80%;
+    margin: 0 auto 0.5rem;
+  }
+  .info{
+    color: #666;
+    text-align: center;
+    i{
+      font-style: normal;
+    }
+  }
+}
+
+
+.notes-detail{
+  padding:0 25% 50px 0;
+}
+
+
 
 .Recruit{
   display: table;
@@ -1037,44 +1082,7 @@ a {
 }
 
 
-.article-detail{
-  padding:0 0 50px 25%;
-  .top{
-    padding: 1rem 0;
-  }
-  .return-btn{
-    margin-bottom: 1.6rem;
-    height: 3rem;
-    .return-btn-fixed{
-      position: fixed;
-      width: 80%;
-      height:3rem;
-      top:52px;
-    }
-    a{
-      display: inline-block;
-      border: 1px solid #333;
-      border-radius: 1rem;
-      padding: 0.3rem 0.8rem;
-      font-size: 1.3rem;
-      background: white;
-    }
-  }
-  .title{
-    text-align: center;
-    font-size: 2.2rem;
-    line-height: 2.4rem;
-    width: 80%;
-    margin: 0 auto 0.5rem;
-  }
-  .info{
-    color: #666;
-    text-align: center;
-    i{
-      font-style: normal;
-    }
-  }
-}
+
 
 
 
@@ -1226,6 +1234,10 @@ a {
       }
     }
 
+    .notes-detail{
+      padding-right: 0;
+    }
+
     .text-list{
       .cell{
         .tag-list{
@@ -1247,31 +1259,31 @@ a {
     .pop .popUp{margin-top: -40%;}
     .text-list{
       .cell{
-      .tag-list{
-        i{
-          display: inline-block;
-          color: #999;
-          border: 1px dotted #999;
-          padding: 0.1rem 0.7rem;
-          border-radius: 0.3rem;
-          margin-left: 0;
+        .tag-list{
+          i{
+            display: inline-block;
+            color: #999;
+            border: 1px dotted #999;
+            padding: 0.1rem 0.7rem;
+            border-radius: 0.3rem;
+            margin-left: 0;
+          }
+        }
+        .date{
+          width: 80px;
+          height: 80px;
+          padding: 15px 10px;
+          .day{
+            font-size: 20px;
+            line-height: 25px;
+            margin-bottom: 5px;
+          }
+          .year{
+            font-size: 13px;
+            line-height: 13px;
+            padding-right: 2px;
+          }
         }
       }
-      .date{
-        width: 80px;
-        height: 80px;
-        padding: 15px 10px;
-        .day{
-          font-size: 20px;
-          line-height: 25px;
-          margin-bottom: 5px;
-        }
-        .year{
-          font-size: 13px;
-          line-height: 13px;
-          padding-right: 2px;
-        }
-      }
-    }
     }
 }

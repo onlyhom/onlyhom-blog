@@ -8,6 +8,7 @@ import work from '../page/work.vue'
 import blog from '../page/blog.vue'
 import blogDetail from '../page/blogDetail.vue'
 import notes from '../page/notes.vue'
+import notesDetail from '../page/notesDetail.vue'
 import contact from '../page/contact.vue'
 
 // 引入子页面
@@ -46,6 +47,10 @@ export default [
   {
     path: '/notes',
     component: notes
+  },
+  {
+    path: '/notesDetail',
+    component: notesDetail,
   },
   {
     path: '/contact',

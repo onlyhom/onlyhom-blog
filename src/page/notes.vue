@@ -9,17 +9,19 @@
         <div class="Box__inner text-list notes-list">
 
           <div class="cell" v-for="(item, key) in notesList">
-            <div class="tag-list">
-              <i>代码片段</i>
-              <i>js</i>
-              <i>小技巧</i>
-            </div>
-            <div class="date">
-              <div class="day">{{ item.day }}</div>
-              <div class="year">{{ item.year }}</div>
-            </div>
-            <div class="title">{{ item.title }}</div>
-            <div class="detail">{{ item.detail }}</div>
+            <router-link :to="{path:'/notesDetail',query:{isFrom: isFrom}}">
+              <div class="tag-list">
+                <i>代码片段</i>
+                <i>js</i>
+                <i>小技巧</i>
+              </div>
+              <div class="date">
+                <div class="day">{{ item.day }}</div>
+                <div class="year">{{ item.year }}</div>
+              </div>
+              <div class="title">{{ item.title }}</div>
+              <div class="detail">{{ item.detail }}</div>
+            </router-link>
           </div>
 
         </div>
@@ -34,6 +36,8 @@
   export default {
     data(){
       return {
+        delayTime:1500,
+        isFrom:1,
         notesList:[
           {
             "day":"21",
@@ -63,16 +67,20 @@
       }
     },
     props: ['isFirstScreen'], //是否为首次打开的页面
+    created:function (){
+      if(this.$route.query.isReturn){
+        this.delayTime = 0;
+      }
+    },
     mounted:function () {
-      console.log(this.isFirstScreen);
-      var delayTime = 1500;
+      var _this = this;
       this.$emit('upTagName','company'); //向父组件传递数据
       this.$emit('upFirstScreen'); //向父组件传递数据
       console.log(this.isFirstScreen);
-      this.isFirstScreen ? delayTime += 9500 : void 0;
+      this.isFirstScreen ? _this.delayTime += 9500 : void 0;
       setTimeout(function () {
         $('#JsCompanyBlock').addClass('on');
-      },delayTime);
+      },_this.delayTime);
     },
     methods:{
 
