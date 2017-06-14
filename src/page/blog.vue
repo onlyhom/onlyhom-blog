@@ -4,25 +4,24 @@
            Solution -> Blogs
        =====================-->
     <article id="JsSolutionBlock" class="Solution Box fade-to-left">
-      <div class="Box__cell">
-        <div class="Box__inner text-list">
-
-          <div class="cell" v-for="(item, key) in blogList">
-            <router-link :to="{path:'/blogDetail',query:{isFrom: isFrom}}">
-              <div class="date">
-                <div class="day">{{ item.day }}</div>
-                <div class="year">{{ item.year }}</div>
-              </div>
-              <div class="title">{{ item.title }}</div>
-              <div class="detail">{{ item.detail }}</div>
-            </router-link>
-          </div>
+      <div class="text-list">
+        <div class="cell" v-for="(item, key) in blogList">
+          <router-link :to="{path:'/blogDetail',query:{isFrom: isFrom, id: item.id}}">
+            <div class="date">
+              <div class="day">{{ item.day }}</div>
+              <div class="year">{{ item.year }}</div>
+            </div>
+            <div class="title">{{ item.title }}</div>
+            <div class="detail">{{ item.description }}</div>
+          </router-link>
         </div>
       </div>
     </article>
 
+
   </div>
 </template>
+
 
 
 <script>
@@ -31,41 +30,13 @@
       return {
         delayTime:1500,
         isFrom:1,
-        blogList:[
-          {
-            "linkURL":"{path:'/blogDetail',query:{isFrom: isFrom}}",
-            "day":"21",
-            "year":"2017-04",
-            "title":"blog-标题标题标题标题标题标题标题标题标题标题标题标题",
-            "detail":"文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情"
-          },
-          {
-            "linkURL":"/blogDetail",
-            "day":"21",
-            "year":"2017-04",
-            "title":"标题标题标题标题标题标题标题标题标题标题标题标题",
-            "detail":"文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情"
-          },
-          {
-            "linkURL":"/blogDetail",
-            "day":"21",
-            "year":"2017-04",
-            "title":"标题标题标题标题标题标题标题标题标题标题标题标题",
-            "detail":"文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情"
-          },
-          {
-            "linkURL":"/blogDetail",
-            "day":"21",
-            "year":"2017-04",
-            "title":"标题标题标题标题标题标题标题标题标题标题标题标题",
-            "detail":"文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情文字详情"
-          }
-        ]
+        blogList:[]
       }
     },
     props: ['isFirstScreen'], //是否为首次打开的页面
     created:function (){
-      if(this.$route.query.isReturn){
+      this.getData();
+      if(!this.isFirstScreen && this.$route.query.isReturn){
         this.delayTime = 0;
       }
     },
@@ -79,7 +50,14 @@
       }, _this.delayTime);
     },
     methods:{
-
+      getData: function(params) {
+        var _this = this;
+        if (!params) params = {};
+        _this.$api.get('api/blog', params, function(res) {
+          console.log(res.data);
+          _this.blogList = res.data;
+        })
+      }
     }
   }
 </script>

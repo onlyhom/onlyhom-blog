@@ -1,14 +1,18 @@
 
-// 引用 vue 没什么要说的
+// 引用 拓展的一些属性
+import expand from './expand/expand'
+
+// 引用 vue
 import Vue from 'vue'
 // 引用路由
 import VueRouter from 'vue-router'
 // 光引用不成，还得使用
+Vue.use(VueRouter)
 
 // import VueHead from 'vue-head'
-
 // Vue.use(VueHead)
-Vue.use(VueRouter)
+
+
 
 // 入口文件为 src/App.vue 文件 所以要引用
 import App from './App.vue'
@@ -23,6 +27,8 @@ Vue.prototype.$api = api;
 const router = new VueRouter({
   routes
 })
+
+
 // 跑起来吧
 var vm = new Vue({
   router,

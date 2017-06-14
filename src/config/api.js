@@ -1,5 +1,6 @@
 // 配置API接口地址
-var root = 'https://cnodejs.org/api/v1';
+//var root = 'https://cnodejs.org/api/v1';
+var root = 'http://localhost:8082';
 // 引用superagent
 var request = require('superagent');
 // 自定义判断元素类型JS
@@ -43,10 +44,10 @@ function _api_base(method, url, params, success, failure) {
   }
   r.end(function(err, res) {
     if (err) {
-      alert('api error, HTTP CODE: ' + res.status);
+      console.log('api error, HTTP CODE: ' + res.status);
       return;
     };
-    if (res.body.success == true) {
+    if (res.body.message == 'success') {
       if (success) {
         success(res.body);
       }
@@ -54,7 +55,7 @@ function _api_base(method, url, params, success, failure) {
       if (failure) {
         failure(res.body);
       } else {
-        alert('error: ' + JSON.stringify(res.body));
+        console.log('error: ' + JSON.stringify(res.body));
       }
     }
   });
