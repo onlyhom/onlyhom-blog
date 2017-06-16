@@ -20,7 +20,7 @@
                     <div class="viewShow">
                       <div class="viewContent">
                         <ul>
-                          <li v-for="item in part.ProjectsData" v-bind:data-id="item.id">
+                          <li v-for="(item,index) in part.ProjectsData" v-bind:data-id="index">
                             <div class="zoomImage" v-bind:style="{backgroundImage:'url('+ item.imageUrl +')'}"></div>
                           </li>
                         </ul>
@@ -39,7 +39,7 @@
                           <a v-bind:href="part.currentData.demoUrl" v-show="part.currentData.demoUrl!=''">[ 演示地址 ]</a>
                           <a v-bind:href="part.currentData.onlineUrl" v-show="part.currentData.onlineUrl!=''">[ 线上地址 ]</a>
                         </h2>
-                        <p>介绍：{{ part.currentData.intro }}</p>
+                        <p>介绍：{{ part.currentData.description }}</p>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 urlCode" v-show="part.currentData.codeUrl!=''">
                         <div class="tips">[ 手机扫一扫预览 ]</div>
@@ -50,7 +50,7 @@
                 </div>
               </div>
               <div class="projectList row">
-                <div  v-for="(item, index) in part.ProjectsData" v-bind:class="{'col-lg-2':true,'col-md-3':true,'col-sm-4':true,'cell':true,'on':item.id==part.nowId }" >
+                <div  v-for="(item, index) in part.ProjectsData" v-bind:class="{'col-lg-2':true,'col-md-3':true,'col-sm-4':true,'cell':true,'on':index==part.nowId }" >
                   <div class="zoomImage" v-bind:style="{backgroundImage:'url('+ item.imageUrl +')'}" v-on:click="clickShow(key, index)"></div>
                 </div>
               </div>
@@ -70,45 +70,40 @@
   // 数据
   var testProjectList = [
     {
-      "id":"0",
       "name":"巨点传媒",
-      "intro": "传媒官网",
+      "description": "传媒官网",
       "imageUrl":require('../assets/my_works/judian/cover.jpg'),
       "demoUrl":"#",
       "onlineUrl":"#",
       "codeUrl": require('../assets/images/code.jpg')
     },
     {
-      "id":"1",
       "name":"科钛机器人",
-      "intro": "科钛机器人官网 多特效",
+      "description": "科钛机器人官网 多特效",
       "imageUrl":require('../assets/my_works/ketai/cover.jpg'),
       "demoUrl":"#",
       "onlineUrl":"",
       "codeUrl": ""
     },
     {
-      "id":"2",
       "name":"风步豪车",
-      "intro": "移动端/微信公众号 豪车租赁平台",
+      "description": "移动端/微信公众号 豪车租赁平台",
       "imageUrl":require('../assets/my_works/phonebuCar/cover.jpg'),
       "demoUrl":"#",
       "onlineUrl":"#",
       "codeUrl": require('../assets/images/code.jpg')
     },
     {
-      "id":"3",
       "name":"wingfone手机官网",
-      "intro": "wingfone手机官网 根据vivo仿制",
+      "description": "wingfone手机官网 根据vivo仿制",
       "imageUrl":require('../assets/my_works/wingfone/cover.jpg'),
       "demoUrl":"#",
       "onlineUrl":"#",
       "codeUrl": require('../assets/images/code.jpg')
     },
     {
-      "id":"4",
       "name":"舟山微电影节官网",
-      "intro": "舟山微电影节大赛的官网",
+      "description": "舟山微电影节大赛的官网",
       "imageUrl":require('../assets/my_works/zhoushan/cover.jpg'),
       "demoUrl":"#",
       "onlineUrl":"#",
@@ -116,7 +111,7 @@
     }
   ];
 
-  var testPartData = [
+  var projectLists = [
     {
       "titleUrl":require('../assets/images/work_title1.png'),
       "nowId":"0",
@@ -144,19 +139,20 @@
   ];
 
 
-  for(var i=0; i<testPartData.length; i++){
-    testPartData[i].currentData = testPartData[i].ProjectsData[0];
+  for(var i=0; i<projectLists.length; i++){
+    projectLists[i].currentData = projectLists[i].ProjectsData[0];
   }
-
-
 
   export default {
     data(){
       return {
-        projectLists : testPartData
+        projectLists : projectLists
       }
     },
     props: ['isFirstScreen'], //是否为首次打开的页面
+    created:function (){
+      this.getData();
+    },
     mounted:function () {
       console.log(this.isFirstScreen);
       var delayTime = 2500;
@@ -240,6 +236,14 @@
           vcon.css("top", "0px");
           _this.updateId(partIndex);
         });
+      },
+      getData: function(params) {
+        var _this = this;
+        if (!params) params = {};
+        _this.$api.get('api/work', params, function(res) {
+          console.log(res.data);
+          //_this.blogList = res.data;
+        })
       }
     }
   }
