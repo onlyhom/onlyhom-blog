@@ -43,7 +43,8 @@
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 urlCode" v-show="part.currentData.codeUrl!=''">
                         <div class="tips">[ 手机扫一扫预览 ]</div>
-                        <div class="zoomImage" v-bind:style="{backgroundImage:'url('+part.currentData.codeUrl+')'}"></div>
+                        <!--<img v-bind:src="part.currentData.codeUrl" alt="">-->
+                        <div class="zoomImage" v-bind:style="{backgroundImage:'url(http://localhost:8082'+part.currentData.codeUrl+')'}"></div>
                       </div>
                     </div>
                   </div>
@@ -111,42 +112,11 @@
     }
   ];
 
-  var projectLists = [
-    {
-      "titleUrl":require('../assets/images/work_title1.png'),
-      "nowId":"0",
-      "ProjectsData": testProjectList,
-      "currentData" : {}
-    },
-    {
-      "titleUrl":require('../assets/images/work_title2.png'),
-      "nowId":"0",
-      "ProjectsData": testProjectList,
-      "currentData" : {}
-    },
-    {
-      "titleUrl":require('../assets/images/work_title3.png'),
-      "nowId":"0",
-      "ProjectsData": testProjectList,
-      "currentData" : {}
-    },
-    {
-      "titleUrl":require('../assets/images/work_title4.png'),
-      "nowId":"0",
-      "ProjectsData": testProjectList,
-      "currentData" : {}
-    }
-  ];
-
-
-  for(var i=0; i<projectLists.length; i++){
-    projectLists[i].currentData = projectLists[i].ProjectsData[0];
-  }
 
   export default {
     data(){
       return {
-        projectLists : projectLists
+        projectLists : []
       }
     },
     props: ['isFirstScreen'], //是否为首次打开的页面
@@ -241,9 +211,24 @@
         var _this = this;
         if (!params) params = {};
         _this.$api.get('api/work', params, function(res) {
-          console.log(res.data);
-          //_this.blogList = res.data;
-        })
+          var works = res.data.works.reverse();
+
+          for(var i=0; i<works.length; i++){
+            console.log(works[i]);
+            _this.projectLists.push(
+              {
+                "titleUrl":require('../assets/images/work_title'+(i+1)+'.png'),
+                "nowId":"0",
+                "ProjectsData": works[i].data,
+                "currentData" : works[i].data[0]
+              }
+            );
+          }
+
+        });
+
+        console.log(_this.projectLists);
+
       }
     }
   }

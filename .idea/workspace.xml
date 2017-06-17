@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00c8786d-f2bf-4d4f-a629-c15fd907e54b" name="Default" comment="" />
+    <list default="true" id="00c8786d-f2bf-4d4f-a629-c15fd907e54b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/work.vue" afterPath="$PROJECT_DIR$/src/page/work.vue" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -18,17 +20,14 @@
       <file leaf-file-name="work.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/page/work.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="104" column="11" lean-forward="true" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="11" />
+            <state relative-caret-position="252">
+              <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
               <folding>
-                <marker date="1497511426000" expanded="false" signature="4164:4316" ph="{&quot;nowId&quot;: &quot;0&quot;...}" />
-                <marker date="1497511426000" expanded="false" signature="4322:4474" ph="{&quot;nowId&quot;: &quot;0&quot;...}" />
-                <marker date="1497511426000" expanded="false" signature="4480:4632" ph="{&quot;nowId&quot;: &quot;0&quot;...}" />
-                <marker date="1497511426000" expanded="false" signature="4638:4790" ph="{&quot;nowId&quot;: &quot;0&quot;...}" />
-                <marker date="1497511426000" expanded="false" signature="5567:5895" ph="{...}" />
-                <marker date="1497511426000" expanded="false" signature="5942:7051" ph="{...}" />
-                <marker date="1497511426000" expanded="false" signature="7088:7569" ph="{...}" />
-                <marker date="1497511426000" expanded="false" signature="7607:8097" ph="{...}" />
+                <element signature="e#3109#4237#0" expanded="false" />
+                <marker date="1497669897000" expanded="false" signature="4884:5212" ph="{...}" />
+                <marker date="1497669897000" expanded="false" signature="5259:6368" ph="{...}" />
+                <marker date="1497669897000" expanded="false" signature="6405:6886" ph="{...}" />
+                <marker date="1497669897000" expanded="false" signature="6924:7414" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -37,8 +36,8 @@
       <file leaf-file-name="blog.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/blog.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="59" selection-end-column="7" />
+            <state relative-caret-position="512">
+              <caret line="59" column="7" lean-forward="true" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -152,9 +151,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="191" />
-    <option name="y" value="60" />
-    <option name="width" value="975" />
+    <option name="x" value="82" />
+    <option name="y" value="44" />
+    <option name="width" value="1402" />
     <option name="height" value="755" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -199,28 +198,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vuedemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vuedemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="other" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,25 +390,25 @@
       <workItem from="1496460347031" duration="81041000" />
       <workItem from="1497159422695" duration="20712000" />
       <workItem from="1497226180401" duration="15406000" />
-      <workItem from="1497325283228" duration="21401000" />
+      <workItem from="1497325283228" duration="26137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138951000" />
+    <option name="totallyTimeSpent" value="143687000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="191" y="60" width="975" height="755" extended-state="1" />
+    <frame x="82" y="44" width="1402" height="755" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24109015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16654599" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287858" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32880846" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -491,20 +468,8 @@
           <line>122</line>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/page/work.vue</url>
-          <line>70</line>
-          <properties />
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/page/work.vue</url>
-          <line>166</line>
-          <properties />
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="70" />
+      <option name="time" value="71" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -713,14 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/about.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/contact.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -737,6 +694,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="122" column="20" lean-forward="false" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -933,27 +891,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/about.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/blog.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="59" selection-end-column="7" />
+        <state relative-caret-position="512">
+          <caret line="59" column="7" lean-forward="true" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/work.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="104" column="11" lean-forward="true" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="11" />
+        <state relative-caret-position="252">
+          <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
           <folding>
-            <marker date="1497511426000" expanded="false" signature="4164:4316" ph="{&quot;nowId&quot;: &quot;0&quot;...}" />
-            <marker date="1497511426000" expanded="false" signature="4322:4474" ph="{&quot;nowId&quot;: &quot;0&quot;...}" />
-            <marker date="1497511426000" expanded="false" signature="4480:4632" ph="{&quot;nowId&quot;: &quot;0&quot;...}" />
-            <marker date="1497511426000" expanded="false" signature="4638:4790" ph="{&quot;nowId&quot;: &quot;0&quot;...}" />
-            <marker date="1497511426000" expanded="false" signature="5567:5895" ph="{...}" />
-            <marker date="1497511426000" expanded="false" signature="5942:7051" ph="{...}" />
-            <marker date="1497511426000" expanded="false" signature="7088:7569" ph="{...}" />
-            <marker date="1497511426000" expanded="false" signature="7607:8097" ph="{...}" />
+            <element signature="e#3109#4237#0" expanded="false" />
+            <marker date="1497669897000" expanded="false" signature="4884:5212" ph="{...}" />
+            <marker date="1497669897000" expanded="false" signature="5259:6368" ph="{...}" />
+            <marker date="1497669897000" expanded="false" signature="6405:6886" ph="{...}" />
+            <marker date="1497669897000" expanded="false" signature="6924:7414" ph="{...}" />
           </folding>
         </state>
       </provider>
