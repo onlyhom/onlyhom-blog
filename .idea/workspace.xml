@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00c8786d-f2bf-4d4f-a629-c15fd907e54b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/work.vue" afterPath="$PROJECT_DIR$/src/page/work.vue" />
-    </list>
+    <list default="true" id="00c8786d-f2bf-4d4f-a629-c15fd907e54b" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -20,8 +18,8 @@
       <file leaf-file-name="work.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/page/work.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+            <state relative-caret-position="320">
+              <caret line="46" column="99" lean-forward="false" selection-start-line="46" selection-start-column="90" selection-end-line="46" selection-end-column="99" />
               <folding>
                 <element signature="e#3109#4237#0" expanded="false" />
                 <marker date="1497669897000" expanded="false" signature="4884:5212" ph="{...}" />
@@ -151,8 +149,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="82" />
-    <option name="y" value="44" />
+    <option name="x" value="17" />
+    <option name="y" value="48" />
     <option name="width" value="1402" />
     <option name="height" value="755" />
   </component>
@@ -390,15 +388,15 @@
       <workItem from="1496460347031" duration="81041000" />
       <workItem from="1497159422695" duration="20712000" />
       <workItem from="1497226180401" duration="15406000" />
-      <workItem from="1497325283228" duration="26137000" />
+      <workItem from="1497325283228" duration="26768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143687000" />
+    <option name="totallyTimeSpent" value="144318000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="82" y="44" width="1402" height="755" extended-state="1" />
+    <frame x="17" y="48" width="1402" height="755" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16654599" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -742,13 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -907,10 +898,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/work.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        <state relative-caret-position="320">
+          <caret line="46" column="99" lean-forward="false" selection-start-line="46" selection-start-column="90" selection-end-line="46" selection-end-column="99" />
           <folding>
             <element signature="e#3109#4237#0" expanded="false" />
             <marker date="1497669897000" expanded="false" signature="4884:5212" ph="{...}" />
