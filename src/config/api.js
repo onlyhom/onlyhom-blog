@@ -1,6 +1,8 @@
 // 配置API接口地址
 //var root = 'https://cnodejs.org/api/v1';
-var root = 'http://localhost:8082';
+//var root = 'http://localhost:8082';
+var root = 'http://www.onlyhom.com:8082';
+
 // 引用superagent
 var request = require('superagent');
 // 自定义判断元素类型JS
@@ -73,5 +75,5 @@ export default {
   },
   delete: function(url, params, success, failure) {
     return _api_base('DELETE', root + '/' + url, params, success, failure)
-  },
+  }
 }

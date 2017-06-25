@@ -1,10 +1,20 @@
 <template>
   <div>
 
-    <!-- =====================
-        Action -> Work
-    =====================-->
-    <article id="JsActionBlock" class="Action Box fade-to-bottom">
+    <!-- loading -->
+    <div class="loading-container" id="loading" v-show="isloading">
+      <div class="loading" >
+        <div class="line-scale">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <!-- loading END -->
+
+    <article id="JsActionBlock" class="Action Box fade-to-bottom fullHeight">
       <div class="Box__cell is-left">
         <div class="Box__inner work__inner">
 
@@ -36,8 +46,8 @@
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text">
                         <h1>{{ part.currentData.name }}</h1>
                         <h2>
-                          <a v-bind:href="part.currentData.demoUrl" v-show="part.currentData.demoUrl!=''">[ 演示地址 ]</a>
-                          <a v-bind:href="part.currentData.onlineUrl" v-show="part.currentData.onlineUrl!=''">[ 线上地址 ]</a>
+                          <a v-bind:href="part.currentData.demoUrl" v-show="part.currentData.demoUrl!=''" target="_blank">[ 演示地址 ]</a>
+                          <a v-bind:href="part.currentData.onlineUrl" v-show="part.currentData.onlineUrl!=''" target="_blank">[ 线上地址 ]</a>
                         </h2>
                         <p>介绍：{{ part.currentData.description }}</p>
                       </div>
@@ -68,55 +78,13 @@
 
 <script>
 
-  // 数据
-  var testProjectList = [
-    {
-      "name":"巨点传媒",
-      "description": "传媒官网",
-      "imageUrl":require('../assets/my_works/judian/cover.jpg'),
-      "demoUrl":"#",
-      "onlineUrl":"#",
-      "codeUrl": require('../assets/images/code.jpg')
-    },
-    {
-      "name":"科钛机器人",
-      "description": "科钛机器人官网 多特效",
-      "imageUrl":require('../assets/my_works/ketai/cover.jpg'),
-      "demoUrl":"#",
-      "onlineUrl":"",
-      "codeUrl": ""
-    },
-    {
-      "name":"风步豪车",
-      "description": "移动端/微信公众号 豪车租赁平台",
-      "imageUrl":require('../assets/my_works/phonebuCar/cover.jpg'),
-      "demoUrl":"#",
-      "onlineUrl":"#",
-      "codeUrl": require('../assets/images/code.jpg')
-    },
-    {
-      "name":"wingfone手机官网",
-      "description": "wingfone手机官网 根据vivo仿制",
-      "imageUrl":require('../assets/my_works/wingfone/cover.jpg'),
-      "demoUrl":"#",
-      "onlineUrl":"#",
-      "codeUrl": require('../assets/images/code.jpg')
-    },
-    {
-      "name":"舟山微电影节官网",
-      "description": "舟山微电影节大赛的官网",
-      "imageUrl":require('../assets/my_works/zhoushan/cover.jpg'),
-      "demoUrl":"#",
-      "onlineUrl":"#",
-      "codeUrl": ""
-    }
-  ];
-
 
   export default {
     data(){
       return {
-        projectLists : []
+        delayTime:2500,
+        projectLists : [],
+        isloading:false
       }
     },
     props: ['isFirstScreen'], //是否为首次打开的页面
@@ -124,15 +92,17 @@
       this.getData();
     },
     mounted:function () {
-      console.log(this.isFirstScreen);
-      var delayTime = 2500;
-      this.$emit('upTagName','action'); //向父组件传递数据
-      this.$emit('upFirstScreen'); //向父组件传递数据
+      var _this = this;
+      _this.$emit('upTagName','action'); //向父组件传递数据
+      _this.$emit('upFirstScreen'); //向父组件传递数据
       $('.fullHeight').css('min-height',$(window).height()-52);
-      this.isFirstScreen ? delayTime += 9500 : void 0;
-      setTimeout(function () {
-        $('#JsActionBlock').addClass('on');
-      },delayTime);
+      _this.isFirstScreen ? _this.delayTime += 9500 : void 0;
+      if(_this.projectLists.length>0){
+        console.log('数组大于零');
+        setTimeout(function () {
+          $('#JsActionBlock').addClass('on');
+        },_this.delayTime);
+      }
     },
     methods:{
       updateId:function(partIndex){
@@ -207,14 +177,15 @@
           _this.updateId(partIndex);
         });
       },
-      getData: function(params) {
+      getData: function(params){
         var _this = this;
+        _this.isloading = true;
         if (!params) params = {};
         _this.$api.get('api/work', params, function(res) {
+          //console.log(res.data.works);
           var works = res.data.works.reverse();
 
           for(var i=0; i<works.length; i++){
-            console.log(works[i]);
             _this.projectLists.push(
               {
                 "titleUrl":require('../assets/images/work_title'+(i+1)+'.png'),
@@ -225,10 +196,12 @@
             );
           }
 
+          setTimeout(function () {
+            $('#JsActionBlock').addClass('on');
+            _this.isloading = false;
+          }, 2200);
+
         });
-
-        console.log(_this.projectLists);
-
       }
     }
   }

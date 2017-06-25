@@ -15,21 +15,21 @@
           <ul class="FirstBlock__items">
             <li class="FirstBlock__item">
               <div class="FirstBlock__item-inner">
-                <h3><img src="../assets/images/mission.png" alt="MISSION" width="123" height="20"></h3>
+                <h3><img src="../assets/images/about.png" alt="ABOUT" width="123" height="20"></h3>
                 <p>关于我<br>欧丽红<br>技能树</p>
                 <router-link class="smoothing js-page-transition" data-page-slug="mission" to="/about">DETAIL</router-link>
               </div>
             </li>
             <li class="FirstBlock__item">
               <div class="FirstBlock__item-inner">
-                <h3><img src="../assets/images/action.png" alt="IDENTITIY" width="140" height="20"></h3>
+                <h3><img src="../assets/images/work.png" alt="WORK" width="123" height="20"></h3>
                 <p>PC/移动端<br>响应式<br>其他作品</p>
                 <router-link class="smoothing js-page-transition" data-page-slug="action" to="/work">DETAIL</router-link>
               </div>
             </li>
             <li class="FirstBlock__item">
               <div class="FirstBlock__item-inner">
-                <h3><img src="../assets/images/solution.png" alt="SOLUTION" width="153" height="20"></h3>
+                <h3><img src="../assets/images/blog.png" alt="BLOG" width="123" height="20"></h3>
                 <p>技能博客<br>旅游见闻<br>生活感悟</p>
                 <router-link class="smoothing js-page-transition" data-page-slug="solution" to="/blog">DETAIL</router-link>
               </div>
@@ -72,7 +72,7 @@
       var delayTime = 0;
       this.$emit('upTagName',''); //向父组件传递数据
       this.$emit('upFirstScreen'); //向父组件传递数据
-      $('.fullHeight').css('min-height',$(window).height()-52);
+      $('.fullHeight').css('height',$(window).height()-52);
       this.isFirstScreen ? delayTime += 9300 : void 0;
       setTimeout(function () {
         setTimeout(function () {

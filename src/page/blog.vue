@@ -1,8 +1,20 @@
 <template>
   <div>
-    <!-- =====================
-           Solution -> Blogs
-       =====================-->
+
+
+    <!-- loading -->
+    <div class="loading-container" id="loading" v-show="isloading">
+      <div class="loading" >
+        <div class="line-scale">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <!-- loading END -->
+
     <article id="JsSolutionBlock" class="Solution Box fade-to-left">
       <div class="text-list">
         <div class="cell" v-for="(item, key) in blogList">
@@ -30,7 +42,8 @@
       return {
         delayTime:1500,
         isFrom:1,
-        blogList:[]
+        blogList:[],
+        isloading:false
       }
     },
     props: ['isFirstScreen'], //是否为首次打开的页面
@@ -45,17 +58,23 @@
       _this.$emit('upTagName','solution'); //向父组件传递数据
       _this.$emit('upFirstScreen'); //向父组件传递数据
       _this.isFirstScreen ? _this.delayTime += 9500 : void 0;
-      setTimeout(function () {
-        $('#JsSolutionBlock').addClass('on');
-      }, _this.delayTime);
+      if(_this.blogList.length>0){
+        setTimeout(function () {
+          $('.fade-to-left').addClass('on');
+        }, _this.delayTime);
+      }
     },
     methods:{
       getData: function(params) {
         var _this = this;
+        _this.isloading = true;
         if (!params) params = {};
         _this.$api.get('api/blog', params, function(res) {
-          console.log(res.data);
           _this.blogList = res.data;
+          setTimeout(function () {
+            $('.fade-to-left').addClass('on');
+            _this.isloading = false;
+          }, 1300);
         })
       }
     }

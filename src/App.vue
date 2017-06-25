@@ -18,10 +18,10 @@
         <router-link to="/blog" class="js-page-transition" data-page-slug="solution">Blog</router-link>
         <div class="line"></div>
       </div>
-      <div class="cell">
-        <router-link to="/notes" class="js-page-transition" data-page-slug="company">Notes</router-link>
-        <div class="line"></div>
-      </div>
+      <!--<div class="cell">-->
+        <!--<router-link to="/notes" class="js-page-transition" data-page-slug="company">Notes</router-link>-->
+        <!--<div class="line"></div>-->
+      <!--</div>-->
       <div class="cell">
         <router-link to="/contact" class="js-page-transition" data-page-slug="recruit">Contact</router-link>
         <div class="line"></div>
@@ -61,12 +61,12 @@
               <div class="Nav__line"></div>
             </router-link>
           </li>
-          <li>
-            <router-link to="/notes" class="js-page-transition" data-page-slug="company">
-              <span>Notes</span>
-              <div class="Nav__line"></div>
-            </router-link>
-          </li>
+          <!--<li>-->
+            <!--<router-link to="/notes" class="js-page-transition" data-page-slug="company">-->
+              <!--<span>Notes</span>-->
+              <!--<div class="Nav__line"></div>-->
+            <!--</router-link>-->
+          <!--</li>-->
           <li>
             <router-link to="/contact" class="js-page-transition" data-page-slug="recruit">
               <span>Contact</span>
@@ -75,23 +75,25 @@
           </li>
         </ul>
         <div class="menu-trigger" v-on:click="menuTrigger()"></div>
+        <div class="nav-stop-click" id="nav-stop-click"></div>
       </nav>
     </header>
 
     <transition name="router-fade" mode="out-in">
-      <router-view
-        v-bind:class="{'view':true, 'wrap':true, 'on':isMenuOpen}"
-        keep-alive
-        @upTagName="setTagName" :msg="tagName"
-        @upFirstScreen="setFirstScreen"
-        :is-first-screen ="isFirstScreen">
-      </router-view>
+      <keep-alive>
+        <router-view
+          v-bind:class="{'view':true, 'wrap':true, 'on':isMenuOpen}"
+          @upTagName="setTagName" :msg="tagName"
+          @upFirstScreen="setFirstScreen"
+          :is-first-screen ="isFirstScreen">
+        </router-view>
+      </keep-alive>
     </transition>
 
-<footer class="Footer clear">
+    <footer class="Footer clear">
       <p class="Footer__copy">
         <small>
-          <img src="../src/assets/images/copyright.png" height="10" width="111" alt="©ONLYHOM">
+          <img src="../src/assets/images/copyright.png" height="10" width="76" alt="©ONLYHOM">
         </small>
       </p>
     </footer>
@@ -113,13 +115,17 @@
         return {
           isMenuOpen:false,
           tagName:'暂无',
-          isFirstScreen:true
+          isFirstScreen:true,
+          isAnimateEnd:false
         }
     },
     mounted:function () {
-
+      setTimeout(function () {
+        $('#nav-stop-click').addClass('hide');
+      },9300);
       var _that = this;
       console.log(this.msg);
+      //msg代表首屏打开的是哪个页面
       (function() {
         var t = {}.hasOwnProperty, i = function(i, e) {
             function o() {
@@ -667,7 +673,7 @@
                   var i, e, o, n, _this, effectFuntion;
                   _this = this;
                   effectFuntion = this.getCallback(_that.msg);
-                  console.log(_that.msg);
+                  //console.log(_that.msg);
 
                   if (this.removeChild(t.target), Z--, 1 > Z) {
                     for (o = this.Spiral, o.scaleX = 0, o.scaleY = 0, this.addChild(o), o.show(effectFuntion.bind(_this)), i = n = 0; b >= 0 ? b > n: n > b; i = b >= 0 ? ++n: --n) e = this.Particles.all[i],
@@ -894,21 +900,22 @@
     },
     methods:{
       addCellAnimate:function(){
-        var i=0;
-        var cellArr = $('.mobile-menu .cell');
-        var timer = setInterval(function(){
-          cellArr.eq(i).addClass('cell-animate');
-          if (i>= cellArr.length-1) {
-            clearInterval(timer);
-          }else{
-            i++;
-          }
-        },90);
+//        $('.mobile-menu .cell').addClass('cell-animate');
+//        var i=0;
+//        var cellArr = $('.mobile-menu .cell');
+//        var timer = setInterval(function(){
+//          cellArr.eq(i).addClass('cell-animate');
+//          if (i>= cellArr.length-1) {
+//            clearInterval(timer);
+//          }else{
+//            i++;
+//          }
+//        },90);
       },
       removeCellAnimate:function(){
-        setTimeout(function(){
-          $('.mobile-menu .cell').removeClass('cell-animate');
-        },300);
+//        setTimeout(function(){
+//          $('.mobile-menu .cell').removeClass('cell-animate');
+//        },300);
       },
       menuTrigger:function(){
         var canvasBG = document.getElementById('jsCanvas');
@@ -949,8 +956,10 @@
 <style lang="less">
   @import "./style/base/style";
   .router-fade-enter-active, .router-fade-leave-active {
-    transition: opacity .3s;
+    transition: all 1.5s;
   }
+
+
   .router-fade-enter, .router-fade-leave-active {
     opacity: 0;
   }

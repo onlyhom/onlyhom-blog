@@ -8,6 +8,15 @@
       <div class="Box__cell">
         <div class="Box__inner text-list notes-list">
 
+          <div class="tag-nav">
+            <a class="on" href="">全部</a>
+            <a href="">js</a>
+            <a href="">小技巧</a>
+            <a href="">感悟</a>
+            <a href="">旅行</a>
+            <a href="">代码片段</a>
+          </div>
+
           <div class="cell" v-for="(item, key) in notesList">
             <router-link :to="{path:'/notesDetail',query:{isFrom: isFrom}}">
               <div class="tag-list">

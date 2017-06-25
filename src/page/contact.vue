@@ -61,11 +61,11 @@
     },
     props: ['isFirstScreen'], //是否为首次打开的页面
     mounted:function () {
-      console.log(this.isFirstScreen);
-      var delayTime = 1700;
+      //console.log(this.isFirstScreen);
+      var delayTime = 1200;
       this.$emit('upTagName','recruit'); //向父组件传递数据
       this.$emit('upFirstScreen'); //向父组件传递数据
-      $('.fullHeight').css('min-height',$(window).height()-52);
+      $('.fullHeight').css('height',$(window).height()-52);
       this.isFirstScreen ? delayTime += 9500 : void 0;
       setTimeout(function () {
         $('#JsRecruitBlock').addClass('on');
