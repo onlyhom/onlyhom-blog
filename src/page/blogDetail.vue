@@ -20,7 +20,8 @@
       <div class="top">
         <div class="return-btn">
           <div class="return-btn-fixed">
-            <router-link :to="{path:'/blog',query:{isReturn: isReturn}}"> < 返回Blog </router-link>
+            <router-link to="/blog"> < 返回Blog </router-link>
+            <!--<router-link :to="{path:'/blog',query:{isReturn: isReturn}}"> < 返回Blog </router-link>-->
           </div>
         </div>
 
@@ -51,8 +52,8 @@
   export default {
     data(){
       return {
-        delayTime:1500,
-        isReturn : 1,
+//        isReturn:1,
+        delayTime:1,
         blogDetail:{},
         isloading:false
       }
@@ -69,42 +70,34 @@
       next();
     },
     created:function (){
+      var _this = this;
+      _this.isFirstScreen ? _this.delayTime += 9500 : void 0;
+
       if(this.$route.query.id){
-        this.isloading = true;
-        this.getData({id:this.$route.query.id});
+        setTimeout(function () {
+          _this.isloading = true;
+          _this.getData({id:_this.$route.query.id});
+        },_this.delayTime);
       }
-      if(!this.isFirstScreen && this.$route.query.isFrom){
-        this.delayTime = 0;
-      }
+      //获取路径上的id/isFrom： this.$route.query.isFrom
     },
     mounted:function () {
       var _this = this;
-      console.log(_this.isFirstScreen);
       $('.fullHeight').css('min-height',$(window).height()-52);
       _this.$emit('upTagName','solution'); //向父组件传递数据
-      _this.isFirstScreen ? _this.delayTime += 9500 : void 0;
-
-      if(!_this.isloading){
-        setTimeout(function () {
-          $('.fade-to-left').addClass('on');
-        }, _this.delayTime);
-      }
+      _this.$emit('upFirstScreen'); //向父组件传递数据
     },
     methods:{
       getData: function(params) {
         var _this = this;
         if (!params) params = {};
-        $('#loading').show();
         _this.$api.get('api/blog_detail', params, function(res) {
-          //console.log(res.data);
           _this.blogDetail = res.data;
           $('.detail').html(_this.blogDetail.content);
-          //console.log(_this.isFirstScreen);
           setTimeout(function () {
             $('.fade-to-left').addClass('on');
             _this.isloading = false;
           }, 50);
-          _this.$emit('upFirstScreen'); //向父组件传递数据
         })
       }
     }

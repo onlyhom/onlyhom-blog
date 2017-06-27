@@ -18,7 +18,8 @@
     <article id="JsSolutionBlock" class="Solution Box fade-to-left">
       <div class="text-list">
         <div class="cell" v-for="(item, key) in blogList">
-          <router-link :to="{path:'/blogDetail',query:{isFrom: isFrom, id: item.id}}">
+          <router-link :to="{path:'/blogDetail',query:{id: item.id}}">
+          <!--<router-link :to="{path:'/blogDetail',query:{isFrom: isFrom, id: item.id}}">-->
             <div class="date">
               <div class="day">{{ item.day }}</div>
               <div class="year">{{ item.year }}</div>
@@ -40,29 +41,24 @@
   export default {
     data(){
       return {
-        delayTime:1500,
-        isFrom:1,
+        delayTime:1,
+//        isFrom:1,
         blogList:[],
         isloading:false
       }
     },
     props: ['isFirstScreen'], //是否为首次打开的页面
     created:function (){
-      this.getData();
-      if(!this.isFirstScreen && this.$route.query.isReturn){
-        this.delayTime = 0;
-      }
+      var _this = this;
+      _this.isFirstScreen ? _this.delayTime += 9500 : void 0;
+      setTimeout(function () {
+        _this.getData();
+      },_this.delayTime);
     },
     mounted:function () {
       var _this = this;
       _this.$emit('upTagName','solution'); //向父组件传递数据
       _this.$emit('upFirstScreen'); //向父组件传递数据
-      _this.isFirstScreen ? _this.delayTime += 9500 : void 0;
-      if(_this.blogList.length>0){
-        setTimeout(function () {
-          $('.fade-to-left').addClass('on');
-        }, _this.delayTime);
-      }
     },
     methods:{
       getData: function(params) {
@@ -74,7 +70,7 @@
           setTimeout(function () {
             $('.fade-to-left').addClass('on');
             _this.isloading = false;
-          }, 1300);
+          }, 50);
         })
       }
     }

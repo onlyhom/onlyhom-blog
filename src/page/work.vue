@@ -89,20 +89,17 @@
     },
     props: ['isFirstScreen'], //是否为首次打开的页面
     created:function (){
-      this.getData();
+      var _this = this;
+      _this.isFirstScreen ? _this.delayTime += 9500 : void 0;
+      setTimeout(function () {
+        _this.getData();
+      },_this.delayTime);
     },
     mounted:function () {
       var _this = this;
       _this.$emit('upTagName','action'); //向父组件传递数据
       _this.$emit('upFirstScreen'); //向父组件传递数据
       $('.fullHeight').css('min-height',$(window).height()-52);
-      _this.isFirstScreen ? _this.delayTime += 9500 : void 0;
-      if(_this.projectLists.length>0){
-        console.log('数组大于零');
-        setTimeout(function () {
-          $('#JsActionBlock').addClass('on');
-        },_this.delayTime);
-      }
     },
     methods:{
       updateId:function(partIndex){
@@ -182,7 +179,6 @@
         _this.isloading = true;
         if (!params) params = {};
         _this.$api.get('api/work', params, function(res) {
-          //console.log(res.data.works);
           var works = res.data.works.reverse();
 
           for(var i=0; i<works.length; i++){
@@ -199,7 +195,7 @@
           setTimeout(function () {
             $('#JsActionBlock').addClass('on');
             _this.isloading = false;
-          }, 2200);
+          }, 50);
 
         });
       }
