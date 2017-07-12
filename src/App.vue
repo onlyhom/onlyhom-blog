@@ -900,22 +900,8 @@
     },
     methods:{
       addCellAnimate:function(){
-//        $('.mobile-menu .cell').addClass('cell-animate');
-//        var i=0;
-//        var cellArr = $('.mobile-menu .cell');
-//        var timer = setInterval(function(){
-//          cellArr.eq(i).addClass('cell-animate');
-//          if (i>= cellArr.length-1) {
-//            clearInterval(timer);
-//          }else{
-//            i++;
-//          }
-//        },90);
       },
       removeCellAnimate:function(){
-//        setTimeout(function(){
-//          $('.mobile-menu .cell').removeClass('cell-animate');
-//        },300);
       },
       menuTrigger:function(){
         var canvasBG = document.getElementById('jsCanvas');
